@@ -1,5 +1,5 @@
 # Ex.08 Design of Interactive Image Gallery
-## Date:05/10/2025
+## Date:07-10-2025
 
 ## AIM:
 To design a web application for an inteactive image gallery with minimum five images.
@@ -26,115 +26,82 @@ Publish the website in the given URL.
 
 ## PROGRAM :
 ```
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Gallery</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            text-align: center;
-            padding: 20px;
-        }
+gallery.html
 
-        h1 {
-            color: #333;
-        }
-
-        #searchInput {
-            padding: 10px;
-            width: 300px;
-            font-size: 16px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .photo {
-            margin: 10px;
-            border: 2px solid #ddd;
-            padding: 10px;
-            background-color: white;
-            transition: transform 0.3s;
-        }
-
-        .photo:hover {
-            transform: scale(1.05);
-            border-color: #888;
-        }
-
-        .photo img {
-            max-width: 200px;
-            max-height: 200px;
-        }
-
-        .caption {
-            margin-top: 8px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>My Gallery</h1>
-    <h2>Dhanavishni M(25016333)</h2>
-
-    <div class="gallery" id="photoGallery">
-        <div class="photo">
-            <img src="image1.jpg" alt="photo1">
-            <div class="caption">photo1</div>
+<html>
+    <head>
+        <title>Gallery</title>
+        <link rel="stylesheet" href="style1.css">
+        <script src="style2.js"></script>
+    </head>
+    <body>
+        <h1>MY GALLERY - Dhanavishni M(25016333)</h1>
+        <div class="gallery">
+            <div class="galleryitem">
+                <img class="zoom" src="image1.jpg" onmouseover="mousein()" onmouseout="mouseout()" id="image">
+            </div>
+            <div class="galleryitem">
+                <img class="zoom" src="image2.jpg" onmouseover="mousein()" onmouseout="mouseout()" id="image">
+            </div>
+            <div class="galleryitem">
+                <img class="zoom" src="image3.jpg" onmouseover="mousein()" onmouseout="mouseout()" id="image">
+            </div>
+            <div class="galleryitem">
+                <img class="zoom" src="image4.jpg" onmouseover="mousein()" onmouseout="mouseout()" id="image">
+            </div>
+            <div class="galleryitem">
+                <img class="zoom" src="image5.jpg" onmouseover="mousein()" onmouseout="mouseout()" id="image">
+            </div>
         </div>
-        <div class="photo">
-            <img src="image2.jpg" alt="photo2">
-            <div class="caption">photo2</div>
-        </div>
-        <div class="photo">
-            <img src="image3.jpg" alt="photo3">
-            <div class="caption">photo3</div>
-        </div>
-        <div class="photo">
-            <img src="image4.jpg" alt="photo4">
-            <div class="caption">photo4</div>
-        </div>
-        <div class="photo">
-            <img src="image5.jpg" alt="photo5">
-            <div class="caption">photo5</div>
-        </div>
-    </div>
-
-    <script>
-        function filterPhotos() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const photos = document.querySelectorAll('.photo');
-
-            photos.forEach(photo => {
-                const caption = photo.querySelector('.caption').innerText.toLowerCase();
-                if (caption.includes(input)) {
-                    photo.style.display = 'block';
-                } else {
-                    photo.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-</body>
+        </body>
 </html>
-```
 
+style1.css
+
+body {
+    background-color:lightblue;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.gallery {
+    display: flex;
+    gap: 20px;
+    padding-top: 50px;
+    justify-content: center;;
+}
+
+.galleryitem {
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    padding: 20px;
+}
+
+.galleryitem img {
+    width: 230px;
+    height: 300px;
+}
+
+
+style2.js
+
+function mousein()
+{
+    document.getElementById("image").style.width="250";
+    document.getElementById("image").style.height="350";
+}
+
+function mouseout()
+{
+    document.getElementById("image").style.width="230";
+    document.getElementById("image").style.height="300";
+}
+
+```
 ## OUTPUT:
-![alt text](<Screenshot 2025-10-05 120946.png>)
-![alt text](<Screenshot 2025-10-05 121004.png>)
-![alt text](<Screenshot 2025-10-05 121015.png>)
-![alt text](<Screenshot 2025-10-05 121024.png>)
-![alt text](<Screenshot 2025-10-05 121033.png>)
-![alt text](<Screenshot 2025-10-05 121042.png>)
+![alt text](<Screenshot (58).png>)
+![alt text](<Screenshot 2025-10-07 232908.png>)
 
 
 ## RESULT:
